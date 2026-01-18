@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Sort Puzzle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="homePage" class="home-page">
+        <div class="top-bar">
+            <button class="icon-button profile-btn">
+                <i class="fas fa-user"></i> Profile
+            </button>
+            <button class="icon-button settings-btn">
+                <i class="fas fa-cog"></i> Settings
+            </button>
+        </div>
+        <div class="game-title">
+            <h1>Water Sort Puzzle</h1>
+            <p>Sort the colored water to match!</p>
+        </div>
+
+        <div class="main-buttons">
+            <button class="play-button">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+            <button class="continue-button">
+                <i class="fas fa-forward"></i> Continue Level
+            </button>
+            <button class="instructions-button">
+                <i class="fas fa-info-circle"></i> Instructions
+            </button>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="gameContainer" class="game-container hidden">
+        <div class="game-header">
+            <div class="level-info">
+                <span id="level">Level: 1</span>
+                <span id="moves">Moves: 0</span>
+                <span id="timer">Time: 00:00</span>
+            </div>
+            <div class="tube-controls">
+                <button class="control-btn add-tube-btn small-btn" onclick="addNewTube()">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="control-btn delete-tube-btn small-btn" onclick="deleteTube()">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+            <div class="game-controls">
+                <button class="control-btn" onclick="undoMove()">
+                    <i class="fas fa-undo"></i> Undo
+                </button>
+                <button class="control-btn" onclick="resetLevel()">
+                    <i class="fas fa-sync"></i> Reset
+                </button>
+                <button class="control-btn infinity-skip-btn" onclick="toggleInfinitySkips()">
+                    <i class="fas fa-infinity"></i> ∞ Skip
+                </button>
+                <button class="control-btn home-btn" onclick="showHome()">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </div>
+        </div>
+        
+        <div class="bottles-container">
+            <!-- Bottles will be dynamically added here -->
+        </div>
+    </div>
+    
+    <!-- Level Completion Overlay -->
+    <div id="completionOverlay" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: flex; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px;">
+            <h2 id="completionText">Level Complete!</h2>
+            <p id="completionMoves">Moves: 0</p>
+            <p id="completionTime">Time: 00:00</p>
+            <div id="starsDisplay" style="font-size: 2em; margin: 20px 0;"></div>
+            <button onclick="nextLevel()">Next Level</button>
+            <button onclick="tryAgain()">Try Again</button>
+            <button onclick="showHome()">Home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
