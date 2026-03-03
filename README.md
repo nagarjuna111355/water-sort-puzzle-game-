@@ -79,12 +79,6 @@ water sort puzzle game/
 - **Difficulty**: Select game difficulty level
 - **Auto Save**: Automatically save progress
 
-## 🚀 Getting Started
-
-1. **Clone or Download**: Get the game files
-2. **Open index.html**: Launch the game in your web browser
-3. **No Installation Required**: Runs entirely in the browser
-
 ## 📱 Browser Compatibility
 
 - Chrome (Recommended)
